@@ -6,11 +6,11 @@
 //  Copyright © 2020 Raieiros Studio. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
 
 class StudentModel {
     
-    var students: [Student]
+    @State var students: [Student]
     
     init() {
         students = [
@@ -22,9 +22,14 @@ class StudentModel {
         ]
     }
     
-    func studentReferenceBy(id: Int) -> Student {
-        let index = self.students.firstIndex(where: { $0.id == id } )!
-        return self.students[index]
+    func referenceBy(id: Int) -> Student {
+        let index = students.firstIndex(where: { $0.id == id } )!
+        return students[index]
+    }
+    
+    func referenceFrom(_ s: Student) -> Student {
+        let index = students.firstIndex(where: { $0.id == s.id } )!
+        return students[index]
     }
 }
 

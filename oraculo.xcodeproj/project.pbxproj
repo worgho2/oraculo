@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A0B8FF223F5DBB90090E157 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0B8FF123F5DBB90090E157 /* ProfileView.swift */; };
 		7A0DEBE223F3176F00C86AB9 /* AssignOccurrenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DEBE123F3176F00C86AB9 /* AssignOccurrenceView.swift */; };
 		7A0DEBE423F3257300C86AB9 /* PrintTermView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DEBE323F3257300C86AB9 /* PrintTermView.swift */; };
-		7A0DEBE623F3289000C86AB9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DEBE523F3289000C86AB9 /* ProfileView.swift */; };
+		7A0DEBE623F3289000C86AB9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DEBE523F3289000C86AB9 /* SettingsView.swift */; };
 		7A0DEBE823F338A300C86AB9 /* OccurrenceReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DEBE723F338A300C86AB9 /* OccurrenceReference.swift */; };
 		7A0DEBEA23F4762500C86AB9 /* OccurrenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DEBE923F4762500C86AB9 /* OccurrenceModel.swift */; };
-		7A0DEBEC23F4793600C86AB9 /* EducatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DEBEB23F4793600C86AB9 /* EducatorModel.swift */; };
+		7A0DEBEC23F4793600C86AB9 /* EducatorSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DEBEB23F4793600C86AB9 /* EducatorSingleton.swift */; };
+		7A0DEBF023F48DDE00C86AB9 /* EducatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DEBEF23F48DDE00C86AB9 /* EducatorModel.swift */; };
+		7A0DEBF223F48EB500C86AB9 /* EducatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DEBF123F48EB500C86AB9 /* EducatorView.swift */; };
+		7A0DEBF423F59CD600C86AB9 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DEBF323F59CD600C86AB9 /* SearchBarView.swift */; };
+		7A0DEBF723F5A00300C86AB9 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DEBF623F5A00300C86AB9 /* UIApplication.swift */; };
+		7A0DEBF923F5A05300C86AB9 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DEBF823F5A05300C86AB9 /* View.swift */; };
+		7A0DEBFC23F5A10E00C86AB9 /* ResignKeyboardOnDragGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DEBFB23F5A10E00C86AB9 /* ResignKeyboardOnDragGesture.swift */; };
 		7A320BA823F17BC800027B37 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A320BA723F17BC800027B37 /* StudentModel.swift */; };
 		7A320BAB23F1866B00027B37 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A320BAA23F1866B00027B37 /* Student.swift */; };
 		7A320BAD23F1869B00027B37 /* Occurrence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A320BAC23F1869B00027B37 /* Occurrence.swift */; };
@@ -29,12 +36,19 @@
 
 /* Begin PBXFileReference section */
 		7A031B9E23EF361800E465D0 /* oraculo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = oraculo.entitlements; sourceTree = "<group>"; };
+		7A0B8FF123F5DBB90090E157 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		7A0DEBE123F3176F00C86AB9 /* AssignOccurrenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignOccurrenceView.swift; sourceTree = "<group>"; };
 		7A0DEBE323F3257300C86AB9 /* PrintTermView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintTermView.swift; sourceTree = "<group>"; };
-		7A0DEBE523F3289000C86AB9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		7A0DEBE523F3289000C86AB9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7A0DEBE723F338A300C86AB9 /* OccurrenceReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccurrenceReference.swift; sourceTree = "<group>"; };
 		7A0DEBE923F4762500C86AB9 /* OccurrenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccurrenceModel.swift; sourceTree = "<group>"; };
-		7A0DEBEB23F4793600C86AB9 /* EducatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducatorModel.swift; sourceTree = "<group>"; };
+		7A0DEBEB23F4793600C86AB9 /* EducatorSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducatorSingleton.swift; sourceTree = "<group>"; };
+		7A0DEBEF23F48DDE00C86AB9 /* EducatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducatorModel.swift; sourceTree = "<group>"; };
+		7A0DEBF123F48EB500C86AB9 /* EducatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducatorView.swift; sourceTree = "<group>"; };
+		7A0DEBF323F59CD600C86AB9 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		7A0DEBF623F5A00300C86AB9 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		7A0DEBF823F5A05300C86AB9 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		7A0DEBFB23F5A10E00C86AB9 /* ResignKeyboardOnDragGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResignKeyboardOnDragGesture.swift; sourceTree = "<group>"; };
 		7A320BA723F17BC800027B37 /* StudentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
 		7A320BAA23F1866B00027B37 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		7A320BAC23F1869B00027B37 /* Occurrence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Occurrence.swift; sourceTree = "<group>"; };
@@ -62,12 +76,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A0DEBF523F59FED00C86AB9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7A0DEBF623F5A00300C86AB9 /* UIApplication.swift */,
+				7A0DEBF823F5A05300C86AB9 /* View.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7A0DEBFA23F5A0E700C86AB9 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				7A0DEBFB23F5A10E00C86AB9 /* ResignKeyboardOnDragGesture.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
 		7A320BA923F1864900027B37 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				7A320BA723F17BC800027B37 /* StudentModel.swift */,
 				7A0DEBE923F4762500C86AB9 /* OccurrenceModel.swift */,
-				7A0DEBEB23F4793600C86AB9 /* EducatorModel.swift */,
+				7A0DEBEF23F48DDE00C86AB9 /* EducatorModel.swift */,
+				7A0DEBEB23F4793600C86AB9 /* EducatorSingleton.swift */,
 				7A320BAA23F1866B00027B37 /* Student.swift */,
 				7A0DEBE723F338A300C86AB9 /* OccurrenceReference.swift */,
 				7A320BAC23F1869B00027B37 /* Occurrence.swift */,
@@ -105,6 +137,8 @@
 				7A74A44923EB16B80040E184 /* Preview Content */,
 				7A320BA923F1864900027B37 /* Model */,
 				7A80C70423F1B7E700ECD627 /* View */,
+				7A0DEBF523F59FED00C86AB9 /* Extensions */,
+				7A0DEBFA23F5A0E700C86AB9 /* ViewModifiers */,
 			);
 			path = oraculo;
 			sourceTree = "<group>";
@@ -121,10 +155,13 @@
 			isa = PBXGroup;
 			children = (
 				7A74A44523EB16B50040E184 /* SearchStudentView.swift */,
+				7A0DEBE523F3289000C86AB9 /* SettingsView.swift */,
+				7A0B8FF123F5DBB90090E157 /* ProfileView.swift */,
 				7A80C70223F1B17600ECD627 /* StudentView.swift */,
 				7A0DEBE123F3176F00C86AB9 /* AssignOccurrenceView.swift */,
+				7A0DEBF123F48EB500C86AB9 /* EducatorView.swift */,
 				7A0DEBE323F3257300C86AB9 /* PrintTermView.swift */,
-				7A0DEBE523F3289000C86AB9 /* ProfileView.swift */,
+				7A0DEBF323F59CD600C86AB9 /* SearchBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -204,16 +241,23 @@
 				7A320BA823F17BC800027B37 /* StudentModel.swift in Sources */,
 				7A320BB123F186DF00027B37 /* Term.swift in Sources */,
 				7A0DEBE223F3176F00C86AB9 /* AssignOccurrenceView.swift in Sources */,
-				7A0DEBEC23F4793600C86AB9 /* EducatorModel.swift in Sources */,
-				7A0DEBE623F3289000C86AB9 /* ProfileView.swift in Sources */,
+				7A0DEBF223F48EB500C86AB9 /* EducatorView.swift in Sources */,
+				7A0DEBFC23F5A10E00C86AB9 /* ResignKeyboardOnDragGesture.swift in Sources */,
+				7A0DEBEC23F4793600C86AB9 /* EducatorSingleton.swift in Sources */,
+				7A0DEBE623F3289000C86AB9 /* SettingsView.swift in Sources */,
+				7A0DEBF023F48DDE00C86AB9 /* EducatorModel.swift in Sources */,
 				7A320BAD23F1869B00027B37 /* Occurrence.swift in Sources */,
 				7A74A44223EB16B50040E184 /* AppDelegate.swift in Sources */,
+				7A0DEBF423F59CD600C86AB9 /* SearchBarView.swift in Sources */,
 				7A74A44423EB16B50040E184 /* SceneDelegate.swift in Sources */,
+				7A0DEBF923F5A05300C86AB9 /* View.swift in Sources */,
 				7A0DEBEA23F4762500C86AB9 /* OccurrenceModel.swift in Sources */,
 				7A74A44623EB16B50040E184 /* SearchStudentView.swift in Sources */,
 				7A0DEBE423F3257300C86AB9 /* PrintTermView.swift in Sources */,
 				7A0DEBE823F338A300C86AB9 /* OccurrenceReference.swift in Sources */,
 				7A80C70323F1B17600ECD627 /* StudentView.swift in Sources */,
+				7A0DEBF723F5A00300C86AB9 /* UIApplication.swift in Sources */,
+				7A0B8FF223F5DBB90090E157 /* ProfileView.swift in Sources */,
 				7A320BAB23F1866B00027B37 /* Student.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,9 +12,9 @@ class Student: Identifiable {
     static var next_id = 0
     
     let id: Int
-    let name: String
-    let grade: String
-    let className: String
+    var name: String
+    var grade: String
+    var className: String
     
     var occurrences: [Occurrence]
     var terms: [Term]

@@ -22,16 +22,56 @@ struct StudentView: View {
         return formatter
     }
     
+    private func deleteItem(at indexSet: IndexSet) {
+        self.student.occurrences.remove(atOffsets: indexSet)
+    }
+    
     var body: some View {
 
-        HStack {
-            List(student.occurrences) { occurrence in
-                HStack {
-                    Text(occurrence.reference.text).bold()
-                    Spacer()
-                    Text("\(occurrence.data, formatter: self.dateFormatter)")
+        Form {
+            List {
+                
+                Section(header: Text("Occurrences")) {
+                    if student.occurrences.isEmpty {
+                        Button(action: {
+                            self.modalSelection = 0
+                            self.showingModal = true
+                        }) {
+                            Text("Add the first occurrence")
+                        }
+                        
+                    } else {
+                        ForEach(student.occurrences) { occurrence in
+                            HStack {
+                                Text(occurrence.reference.text).bold()
+                                Spacer()
+                                Text("\(occurrence.data, formatter: self.dateFormatter)")
+                            }
+                        }.onDelete(perform: self.deleteItem)
+                    }
+                    
                 }
+                
+                Section(header: Text("Terms")) {
+                    if student.terms.isEmpty {
+                        Button(action: {
+                            self.modalSelection = 1
+                            self.showingModal = true
+                        }) {
+                            Text("Add the first term")
+                        }
+                    } else {
+                        ForEach(student.terms) { term in
+                            HStack {
+                                Text(term.content).bold()
+                                Spacer()
+                            }
+                        }.onDelete(perform: self.deleteItem)
+                    }
+                }
+                
             }
+            
         }
             
         .navigationBarTitle(student.name)
@@ -61,7 +101,6 @@ struct StudentView: View {
             .sheet(isPresented: $showingModal) {
                 if self.modalSelection == 0 {
                     AssignOccurrenceView(student: self.$student, showingModal: self.$showingModal)
-//                    AssignOccurrenceView(studentModel: self.$studentModel, studentId: self.studentId, showingModal: self.$showingModal)
                 } else if self.modalSelection == 1 {
                     PrintTermView()
                 }
@@ -73,6 +112,6 @@ struct StudentView: View {
 
 struct StudentView_Previews: PreviewProvider {
     static var previews: some View {
-        Text("a")
+        Text("")
     }
 }

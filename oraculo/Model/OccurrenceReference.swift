@@ -11,7 +11,7 @@ import Foundation
 class OccurrenceReference: Identifiable {
     static var next_id = 0
     
-    var id: Int
+    let id: Int
     var text: String
     var isActive: Bool
     

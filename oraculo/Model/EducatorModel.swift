@@ -6,13 +6,25 @@
 //  Copyright © 2020 Raieiros Studio. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
 
-class EducatorModel {
+class EducatorModel: ObservableObject {
     
-    var current: Educator
+    @Published var educators: [Educator] {
+        didSet {
+            print("mudou")
+        }
+    }
     
     init() {
-        current = Educator(name: "Eliane", email: "eliane@gmail.com")
+        educators = [
+            Educator(name: "Eliane", email: "Marcelo@gmail.com", accessLevel: .admin),
+            Educator(name: "Marcelo", email: "Marcelo@gmail.com", accessLevel: .editor),
+            Educator(name: "Adilson", email: "Adilson@bol.com.br", accessLevel: .user),
+            Educator(name: "Maria", email: "Maria@hotmail.com", accessLevel: .admin),
+            Educator(name: "Cleusa", email: "Cleusa@assembleiadedeus.org", accessLevel: .user)
+        ]
     }
+    
+
 }

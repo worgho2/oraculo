@@ -11,7 +11,6 @@ import SwiftUI
 struct AssignOccurrenceView: View {
     
     @State private var occurrenceModel = OccurrenceModel()
-    @State private var educatorModel = EducatorModel()
        
     @Binding public var student: Student
     
@@ -23,10 +22,11 @@ struct AssignOccurrenceView: View {
         NavigationView {
 
             Form {
+                
                 Section(header: Text("Occurrences")) {
                     List(occurrenceModel.references) { reference in
                         HStack { 
-                            Toggle(isOn: self.$occurrenceModel.references[reference.id].isActive) {
+                            Toggle(isOn: self.$occurrenceModel.references[self.occurrenceModel.references.firstIndex(where: { $0.id == reference.id })!].isActive) {
                                 Text("\(reference.text)")
                             }
                         }
@@ -78,7 +78,7 @@ struct AssignOccurrenceView: View {
             if item {
                 let occurrence = Occurrence(reference: occurrenceModel.references[index], data: occurrenceDate)
                 
-                educatorModel.current.assignOccurrence(to: student, occurrence: occurrence)
+                EducatorSingleton.instance.current.assignOccurrence(to: student, occurrence: occurrence)
             }
             
         }
@@ -90,7 +90,6 @@ struct AssignOccurrenceView: View {
 
 struct AssignOccurrenceView_Previews: PreviewProvider {
     static var previews: some View {
-//        AssignOccurrenceView()
-        Text("a")
+        Text("")
     }
 }

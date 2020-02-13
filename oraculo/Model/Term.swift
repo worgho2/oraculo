@@ -12,9 +12,9 @@ class Term: Identifiable {
     static var next_id = 0
     
     let id: Int
-    let content: String
-    let data: String
-    let assignedBy: Int
+    var content: String
+    var data: String
+    var assignedBy: Int
     
     init(content: String, data: String, assignedBy: Int) {
         self.id = Term.next_id
