@@ -14,13 +14,13 @@ class OccurrenceModel {
     
     init() {
         references = [
-            OccurrenceReference(text: "0 - Description of occurrence", isActive: false),
-            OccurrenceReference(text: "1 - Description of occurrence", isActive: false),
-            OccurrenceReference(text: "2 - Description of occurrence", isActive: false),
-            OccurrenceReference(text: "3 - Description of occurrence", isActive: false),
-            OccurrenceReference(text: "4 - Description of occurrence", isActive: false),
-            OccurrenceReference(text: "5 - Description of occurrence", isActive: false),
-            OccurrenceReference(text: "6 - Description of occurrence", isActive: false)
+            OccurrenceReference(text: "Didn't do the homework", isActive: false),
+            OccurrenceReference(text: "Excessive talk", isActive: false),
+            OccurrenceReference(text: "Chewing gum", isActive: false),
+            OccurrenceReference(text: "Disrespect", isActive: false),
+            OccurrenceReference(text: "Fight at break", isActive: false),
+            OccurrenceReference(text: "Committed bullying", isActive: false),
+            OccurrenceReference(text: "Using cell phone", isActive: false)
         ]
     }
     
