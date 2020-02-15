@@ -11,63 +11,58 @@ import Combine
 
 struct EducatorView: View {
     @ObservedObject public var educatorsModel = EducatorModel()
-    @State private var needLayoutUpdate: Bool = false
     
-    @State var admin = AccessLevel.admin
+    //SearchBar
+    @State private var searchText = ""
+    
+    //Picker
+    @State public var pickerSelection = "All"
+    @State public var pickerCategories = ["All", "Name",  "Email", "AccessLevel"]
     
     var body: some View {
-        
-        List {
-            ForEach(self.educatorsModel.educators) { educator in
-                HStack {
-                    Image("avatar")
-                        .resizable()
-                        .clipShape(Circle())
-                        .shadow(radius: 10)
-                        .frame(width: 60, height: 60)
-                    VStack(alignment: .leading) {
-                        Text("\(educator.name)").bold()
-                        Text("\(educator.email)").font(.footnote)
-                    }
-                    Picker("", selection: self.$educatorsModel.educators[self.educatorsModel.educators.firstIndex(where: {$0.id == educator.id})!].accessLevel) {
-                        ForEach(AccessLevel.allCases, id: \.self) { Text($0.rawValue).tag($0) }
+        VStack {
+
+            SearchBarView(searchText: $searchText, pickerSelection: $pickerSelection, pickerCategories: $pickerCategories)
+            
+            List {
+                ForEach(self.filterEducators(self.educatorsModel.educators)) { educator in
+                    HStack {
+                        Image("avatar")
+                            .resizable()
+                            .clipShape(Circle())
+                            .shadow(radius: 10)
+                            .frame(width: 60, height: 60)
+                        VStack(alignment: .leading) {
+                            Text("\(educator.name)").bold()
+                            Text("\(educator.email)").font(.footnote)
+                        }
+                        Picker("", selection: self.$educatorsModel.educators[self.educatorsModel.educators.firstIndex(where: {$0.id == educator.id})!].accessLevel) {
+                            ForEach(AccessLevel.allCases, id: \.self) { Text($0.rawValue).tag($0) }
+                        }.disabled(educator.id == EducatorSingleton.instance.current.id)
                     }
                 }
             }
-//            ForEach(AccessLevel.allCases, id: \.self) { level in
-//                Section(header: Text("\(level.rawValue)")) {
-//                    ForEach(self.educatorsModel.educators.filter({ $0.accessLevel == level })) { educator in
-//                        HStack {
-//                            Image("avatar")
-//                                .resizable()
-//                                .clipShape(Circle())
-//                                .shadow(radius: 10)
-//                                .frame(width: 60, height: 60)
-//                            VStack(alignment: .leading) {
-//                                Text("\(educator.name)").bold()
-//                                Text("\(educator.email)").font(.footnote)
-//                            }
-//                            Picker("", selection: self.$educatorsModel.educators[self.educatorsModel.educators.firstIndex(where: {$0.id == educator.id})!].accessLevel) {
-//                                ForEach(AccessLevel.allCases, id: \.self) { Text($0.rawValue).tag($0) }
-//                            }
-//                        }
-//                    }
-//                }
-//            }
         }
         .navigationBarTitle(Text("Educators"))
+        .resignKeyboardOnDragGesture()
     }
     
-    func educatorsFilteredBy(_ a: AccessLevel) -> [Educator] {
-        switch a {
-        case .admin:
-            return self.educatorsModel.educators.filter({ $0.accessLevel == .admin })
-        case .editor:
-            return self.educatorsModel.educators.filter({ $0.accessLevel == .editor })
-        case .user:
-            return self.educatorsModel.educators.filter({ $0.accessLevel == .user })
+    private func filterEducators(_ e: [Educator]) -> [Educator] {
+        
+        switch self.pickerSelection {
+            case "All":
+                return e.filter({ $0.name.lowercased().contains(searchText.lowercased()) || $0.email.lowercased().contains(searchText.lowercased()) || $0.accessLevel.rawValue.lowercased().contains(searchText.lowercased()) || searchText == "" })
+            case "Name":
+                return e.filter({ $0.name.lowercased().contains(searchText.lowercased()) || searchText == "" })
+            case "Email":
+                return e.filter({ $0.email.lowercased().contains(searchText.lowercased()) || searchText == "" })
+            case "AccessLevel":
+                return e.filter({ $0.accessLevel.rawValue.lowercased().contains(searchText.lowercased()) || searchText == "" })
+            default:
+                return e
         }
     }
+    
 }
 
 struct EducatorView_Previews: PreviewProvider {

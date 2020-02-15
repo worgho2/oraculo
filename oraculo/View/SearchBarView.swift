@@ -14,8 +14,9 @@ struct SearchBarView: View {
     //SearchBar
     @Binding public var searchText: String
     
-    //Segmented Control
+    //Picker
     @Binding public var pickerSelection: String
+    @Binding public var pickerCategories: [String]
     
     var body: some View {
         VStack {
@@ -43,6 +44,7 @@ struct SearchBarView: View {
                             UIApplication.shared.endEditing(true)
                             self.searchText = ""
                             self.showCancelButton = false
+                            self.pickerSelection = self.pickerCategories[0]
                     }
                     .foregroundColor(Color(.systemBlue))
                 }
@@ -51,10 +53,9 @@ struct SearchBarView: View {
             .navigationBarHidden(showCancelButton)
             
             Picker("", selection: $pickerSelection) {
-                Text("All").tag("all")
-                Text("Name").tag("name")
-                Text("Class").tag("class")
-                Text("Grade").tag("grade")
+                ForEach(self.pickerCategories, id: \.self) { option in
+                    Text(option).tag(option)
+                }
             }
             .pickerStyle(SegmentedPickerStyle())
             .padding()

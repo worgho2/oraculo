@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-class EducatorSingleton: ObservableObject{
+class EducatorSingleton: ObservableObject {
     static let instance = EducatorSingleton()
     
     @Published var current: Educator

@@ -162,8 +162,8 @@
 				7A0B8FF123F5DBB90090E157 /* ProfileView.swift */,
 				7A80C70223F1B17600ECD627 /* StudentView.swift */,
 				7A0DEBE123F3176F00C86AB9 /* AssignOccurrenceView.swift */,
-				7A0DEBF123F48EB500C86AB9 /* EducatorView.swift */,
 				7A0DEBE323F3257300C86AB9 /* PrintTermView.swift */,
+				7A0DEBF123F48EB500C86AB9 /* EducatorView.swift */,
 				7A0DEBF323F59CD600C86AB9 /* SearchBarView.swift */,
 			);
 			path = View;

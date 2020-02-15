@@ -103,7 +103,7 @@ struct StudentView: View {
                 if self.modalSelection == 0 {
                     AssignOccurrenceView(student: self.$student, showingModal: self.$showingModal)
                 } else if self.modalSelection == 1 {
-                    PrintTermView()
+                    PrintTermView(student: self.$student, showingModal: self.$showingModal)
                 }
             }
 

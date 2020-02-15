@@ -16,13 +16,16 @@ struct SearchStudentView: View {
     
     //SearchBar
     @State private var searchText = ""
-    @State private var pickerSelection = "all"
+    
+    //Picker
+    @State public var pickerSelection = "All"
+    @State public var pickerCategories = ["All", "Name",  "Class", "Grade"]
 
     var body: some View {
 
         NavigationView {
             VStack {
-                SearchBarView(searchText: $searchText, pickerSelection: $pickerSelection)
+                SearchBarView(searchText: $searchText, pickerSelection: $pickerSelection, pickerCategories: $pickerCategories)
                 
                 List(filterStudents(studentModel.students)) { student in
                     NavigationLink(destination:
@@ -63,13 +66,13 @@ struct SearchStudentView: View {
     private func filterStudents(_ s: [Student]) -> [Student] {
         
         switch self.pickerSelection {
-            case "all":
+            case "All":
                 return s.filter( { $0.name.lowercased().contains(searchText.lowercased()) || $0.className.lowercased().contains(searchText.lowercased()) || String($0.grade).lowercased().contains(searchText.lowercased()) || searchText == "" } )
-            case "name":
+            case "Name":
                 return s.filter( { $0.name.lowercased().contains(searchText.lowercased()) || searchText == "" } )
-            case "class":
+            case "Class":
                 return s.filter( { $0.className.lowercased().contains(searchText.lowercased()) || searchText == "" } )
-            case "grade":
+            case "Grade":
                 return s.filter( { String($0.grade).lowercased().contains(searchText.lowercased()) || searchText == "" } )
             default:
                 return s
