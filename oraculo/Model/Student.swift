@@ -13,13 +13,13 @@ class Student: Identifiable {
     
     let id: Int
     var name: String
-    var grade: String
+    var grade: Int
     var className: String
     
     var occurrences: [Occurrence]
     var terms: [Term]
     
-    init(name: String, grade: String, className: String, occurrences: [Occurrence] = [], terms: [Term] = []) {
+    init(name: String, grade: Int, className: String, occurrences: [Occurrence] = [], terms: [Term] = []) {
         self.id = Student.next_id
         Student.next_id += 1
         

@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @State private var needLayoutUpdate: Bool = false
     
     var body: some View {
         Form {
@@ -37,9 +38,13 @@ struct SettingsView: View {
                     }
                 }
             }
-        }
+        }.onAppear(perform: self.updateScreen)
             
         .navigationBarTitle(Text("Settings"))
+    }
+    
+    func updateScreen() {
+        self.needLayoutUpdate.toggle()
     }
 }
 

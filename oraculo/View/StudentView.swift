@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct StudentView: View {
+    @State private var needLayoutUpdate: Bool = false
     
     @Binding public var student: Student
     
@@ -24,13 +25,13 @@ struct StudentView: View {
     
     private func deleteItem(at indexSet: IndexSet) {
         self.student.occurrences.remove(atOffsets: indexSet)
+        self.needLayoutUpdate.toggle()
     }
     
     var body: some View {
 
         Form {
             List {
-                
                 Section(header: Text("Occurrences")) {
                     if student.occurrences.isEmpty {
                         Button(action: {

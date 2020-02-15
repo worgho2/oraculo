@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7A0B8FF223F5DBB90090E157 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0B8FF123F5DBB90090E157 /* ProfileView.swift */; };
+		7A0B8FF423F7634F0090E157 /* DataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0B8FF323F7634F0090E157 /* DataFactory.swift */; };
 		7A0DEBE223F3176F00C86AB9 /* AssignOccurrenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DEBE123F3176F00C86AB9 /* AssignOccurrenceView.swift */; };
 		7A0DEBE423F3257300C86AB9 /* PrintTermView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DEBE323F3257300C86AB9 /* PrintTermView.swift */; };
 		7A0DEBE623F3289000C86AB9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DEBE523F3289000C86AB9 /* SettingsView.swift */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		7A031B9E23EF361800E465D0 /* oraculo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = oraculo.entitlements; sourceTree = "<group>"; };
 		7A0B8FF123F5DBB90090E157 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		7A0B8FF323F7634F0090E157 /* DataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFactory.swift; sourceTree = "<group>"; };
 		7A0DEBE123F3176F00C86AB9 /* AssignOccurrenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignOccurrenceView.swift; sourceTree = "<group>"; };
 		7A0DEBE323F3257300C86AB9 /* PrintTermView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintTermView.swift; sourceTree = "<group>"; };
 		7A0DEBE523F3289000C86AB9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		7A320BA923F1864900027B37 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7A0B8FF323F7634F0090E157 /* DataFactory.swift */,
 				7A320BA723F17BC800027B37 /* StudentModel.swift */,
 				7A0DEBE923F4762500C86AB9 /* OccurrenceModel.swift */,
 				7A0DEBEF23F48DDE00C86AB9 /* EducatorModel.swift */,
@@ -245,6 +248,7 @@
 				7A0DEBFC23F5A10E00C86AB9 /* ResignKeyboardOnDragGesture.swift in Sources */,
 				7A0DEBEC23F4793600C86AB9 /* EducatorSingleton.swift in Sources */,
 				7A0DEBE623F3289000C86AB9 /* SettingsView.swift in Sources */,
+				7A0B8FF423F7634F0090E157 /* DataFactory.swift in Sources */,
 				7A0DEBF023F48DDE00C86AB9 /* EducatorModel.swift in Sources */,
 				7A320BAD23F1869B00027B37 /* Occurrence.swift in Sources */,
 				7A74A44223EB16B50040E184 /* AppDelegate.swift in Sources */,

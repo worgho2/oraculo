@@ -9,10 +9,10 @@
 import SwiftUI
 
 struct SearchBarView: View {
+    @State private var showCancelButton: Bool = false
     
     //SearchBar
     @Binding public var searchText: String
-    @State private var showCancelButton: Bool = false
     
     //Segmented Control
     @Binding public var pickerSelection: String

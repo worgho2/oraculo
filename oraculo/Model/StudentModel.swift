@@ -8,29 +8,12 @@
 
 import SwiftUI
 
-class StudentModel {
+class StudentModel: ObservableObject {
     
-    @State var students: [Student]
+    @Published var students: [Student]
     
     init() {
-        students = [
-            Student(name: "Otavio", grade: "8", className: "C", occurrences: [], terms: []),
-            Student(name: "Gabriel", grade: "7", className: "D", occurrences: [], terms: []),
-            Student(name: "Jorge", grade: "7", className: "D", occurrences: [], terms: []),
-            Student(name: "Adamastor", grade: "2", className: "A", occurrences: [], terms: []),
-            Student(name: "Pedrinho", grade: "4", className: "D", occurrences: [], terms: [])
-        ]
+        students = DataFactory.generateMockStudentArray()
     }
     
-    func referenceBy(id: Int) -> Student {
-        let index = students.firstIndex(where: { $0.id == id } )!
-        return students[index]
-    }
-    
-    func referenceFrom(_ s: Student) -> Student {
-        let index = students.firstIndex(where: { $0.id == s.id } )!
-        return students[index]
-    }
 }
-
-

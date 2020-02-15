@@ -9,7 +9,6 @@
 import Foundation
 
 class Educator: Identifiable {
-    
     static var next_id = 0
     
     let id: Int

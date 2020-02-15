@@ -9,9 +9,10 @@
 import SwiftUI
 
 struct SearchStudentView: View {
+    @State private var needLayoutUpdate: Bool = false
     
     //studentModel
-    @State public var studentModel = StudentModel()
+    @ObservedObject public var studentModel = StudentModel()
     
     //SearchBar
     @State private var searchText = ""
@@ -62,16 +63,16 @@ struct SearchStudentView: View {
     private func filterStudents(_ s: [Student]) -> [Student] {
         
         switch self.pickerSelection {
-        case "all":
-            return s.filter( { $0.name.lowercased().contains(searchText.lowercased()) || $0.className.lowercased().contains(searchText.lowercased()) || $0.grade.lowercased().contains(searchText.lowercased()) || searchText == "" } )
-        case "name":
-            return s.filter( { $0.name.lowercased().contains(searchText.lowercased()) || searchText == "" } )
-        case "class":
-            return s.filter( { $0.className.lowercased().contains(searchText.lowercased()) || searchText == "" } )
-        case "grade":
-            return s.filter( { $0.grade.lowercased().contains(searchText.lowercased()) || searchText == "" } )
-        default:
-            return s
+            case "all":
+                return s.filter( { $0.name.lowercased().contains(searchText.lowercased()) || $0.className.lowercased().contains(searchText.lowercased()) || String($0.grade).lowercased().contains(searchText.lowercased()) || searchText == "" } )
+            case "name":
+                return s.filter( { $0.name.lowercased().contains(searchText.lowercased()) || searchText == "" } )
+            case "class":
+                return s.filter( { $0.className.lowercased().contains(searchText.lowercased()) || searchText == "" } )
+            case "grade":
+                return s.filter( { String($0.grade).lowercased().contains(searchText.lowercased()) || searchText == "" } )
+            default:
+                return s
         }
     }
 }

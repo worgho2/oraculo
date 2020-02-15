@@ -10,21 +10,10 @@ import SwiftUI
 
 class EducatorModel: ObservableObject {
     
-    @Published var educators: [Educator] {
-        didSet {
-            print("mudou")
-        }
-    }
+    @Published var educators: [Educator]
     
     init() {
-        educators = [
-            Educator(name: "Eliane", email: "Marcelo@gmail.com", accessLevel: .admin),
-            Educator(name: "Marcelo", email: "Marcelo@gmail.com", accessLevel: .editor),
-            Educator(name: "Adilson", email: "Adilson@bol.com.br", accessLevel: .user),
-            Educator(name: "Maria", email: "Maria@hotmail.com", accessLevel: .admin),
-            Educator(name: "Cleusa", email: "Cleusa@assembleiadedeus.org", accessLevel: .user)
-        ]
+        educators = DataFactory.generateMockEducatorArray()
     }
-    
 
 }

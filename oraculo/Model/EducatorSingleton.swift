@@ -8,12 +8,12 @@
 
 import SwiftUI
 
-class EducatorSingleton {
+class EducatorSingleton: ObservableObject{
     static let instance = EducatorSingleton()
     
-    @State var current: Educator
+    @Published var current: Educator
     
     private init() {
-        current = Educator(name: "Eliane", email: "eliane@gmail.com", accessLevel: .admin)
+        current = Educator(name: "Otávio Baziewicz", email: "otavio@email.com", accessLevel: .admin)
     }
 }
