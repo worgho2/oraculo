@@ -22,14 +22,14 @@ struct SettingsView: View {
                                .shadow(radius: 10)
                                .frame(width: 70, height: 70)
                         VStack(alignment: .leading) {
-                            Text("\(EducatorSingleton.instance.current.name)").bold()
-                            Text("\(EducatorSingleton.instance.current.email)").font(.footnote)
+                            Text("\(Model.instance.currentUser.name)").bold()
+                            Text("\(Model.instance.currentUser.email)").font(.footnote)
                         }
                     }
                 }
             }
             
-            if EducatorSingleton.instance.current.accessLevel == .admin {
+            if Model.instance.currentUser.accessLevel == .admin {
                 Section(header: Text("Admin Features")) {
                     HStack {
                         NavigationLink(destination: EducatorView()) {

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct AssignOccurrenceView: View {
     
-    @State private var occurrenceModel = OccurrenceModel()
+    @State private var occurrenceReferences = Model.instance.occurrenceReferences
        
     @Binding public var student: Student
     
@@ -24,9 +24,9 @@ struct AssignOccurrenceView: View {
             Form {
                 
                 Section(header: Text("Occurrences")) {
-                    List(occurrenceModel.references) { reference in
+                    List(occurrenceReferences) { reference in
                         HStack { 
-                            Toggle(isOn: self.$occurrenceModel.references[self.occurrenceModel.references.firstIndex(where: { $0.id == reference.id })!].isActive) {
+                            Toggle(isOn: self.$occurrenceReferences[self.occurrenceReferences.firstIndex(where: { $0.id == reference.id })!].isActive) {
                                 Text("\(reference.text)")
                             }
                         }
@@ -69,22 +69,26 @@ struct AssignOccurrenceView: View {
     }
     
     private func onDone() {
-        if !occurrenceModel.references.map({ $0.isActive }).contains(true) {
+        if !occurrenceReferences.map({ $0.isActive }).contains(true) {
             showingAlert = true
             return
         }
         
-        for (index, item) in occurrenceModel.references.map({ $0.isActive }).enumerated() {
+        for (index, item) in occurrenceReferences.map({ $0.isActive }).enumerated() {
             if item {
-                let occurrence = Occurrence(reference: occurrenceModel.references[index], data: occurrenceDate)
+                let occurrence = Occurrence(reference: occurrenceReferences[index], data: occurrenceDate)
                 
-                EducatorSingleton.instance.current.assignOccurrence(to: student, occurrence: occurrence)
+                Model.instance.currentUser.assignOccurrence(to: student, occurrence: occurrence)
             }
             
         }
         
-        occurrenceModel.resetReferencesState()
+        self.resetOccurrenceReferencesState()
         showingModal = false
+    }
+    
+    private func resetOccurrenceReferencesState() {
+        occurrenceReferences.forEach { $0.isActive = false }
     }
 }
 

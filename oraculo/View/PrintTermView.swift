@@ -78,7 +78,7 @@ struct PrintTermView: View {
         let pdfTitle = "Commitment Term"
         let pdfMetadata = [
             kCGPDFContextCreator: "Oraculo",
-            kCGPDFContextAuthor: EducatorSingleton.instance.current.name,
+            kCGPDFContextAuthor: Model.instance.currentUser.name,
             kCGPDFContextTitle: pdfTitle,
             kCGPDFContextOwnerPassword: "123"
         ]

@@ -24,6 +24,4 @@ class Term: Identifiable {
         self.data = data
         self.assignedBy = assignedBy
     }
-    
-    //todo
 }

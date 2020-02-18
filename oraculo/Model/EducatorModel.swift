@@ -9,11 +9,12 @@
 import SwiftUI
 
 class EducatorModel: ObservableObject {
+    private let dataProvider: DataProvider = Mock()
     
     @Published var educators: [Educator]
     
     init() {
-        educators = DataFactory.generateMockEducatorArray()
+        educators = dataProvider.getEducators()
     }
 
 }

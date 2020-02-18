@@ -9,9 +9,9 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State var name: String = EducatorSingleton.instance.current.name
+    @State var name: String = Model.instance.currentUser.name
     
-    @State var email: String = EducatorSingleton.instance.current.email
+    @State var email: String = Model.instance.currentUser.email
     
     var body: some View {
         Form {
@@ -23,8 +23,8 @@ struct ProfileView: View {
                         .shadow(radius: 10)
                         .frame(width: 70, height: 70)
                     VStack(alignment: .leading) {
-                        Text("Access Level:").bold() + Text("\(EducatorSingleton.instance.current.accessLevel.rawValue)")
-                        Text("Id: ").bold() + Text("\(EducatorSingleton.instance.current.id)")
+                        Text("Access Level:").bold() + Text("\(Model.instance.currentUser.accessLevel.rawValue)")
+                        Text("Id: ").bold() + Text("\(Model.instance.currentUser.id)")
                     }
                 }
                 

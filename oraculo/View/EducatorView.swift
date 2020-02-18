@@ -38,7 +38,7 @@ struct EducatorView: View {
                         }
                         Picker("", selection: self.$educatorsModel.educators[self.educatorsModel.educators.firstIndex(where: {$0.id == educator.id})!].accessLevel) {
                             ForEach(AccessLevel.allCases, id: \.self) { Text($0.rawValue).tag($0) }
-                        }.disabled(educator.id == EducatorSingleton.instance.current.id)
+                        }.disabled(educator.id == Model.instance.currentUser.id)
                     }
                 }
             }
